@@ -33,10 +33,10 @@
   <body>
     <input type="checkbox" id="menu-toggle" />
     
-<%@include file="./includes/left_admin.jsp" %>
+<%@include file="sidebar.jsp" %>
     <div class="main-content">
    
-<%@include file="./includes/navbar_admin.jsp" %>
+<%@include file="navbar_admin.jsp" %>
       <main>
         <div class="page-header">
           <h1>Detail Order</h1>

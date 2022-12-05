@@ -789,4 +789,6 @@ a:hover {
     width: 100%;
     height: auto;
     background: #0c0116;
+    position: absolute;
+    z-index: 100;
 }

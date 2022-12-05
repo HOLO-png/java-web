@@ -164,16 +164,22 @@
 							<div class="best_shoes">
 								<p class="best_text">${tempProduct.product_name}</p>
 								<div class="shoes_icon">
-									<img src=${tempProduct.image}>
+									<img src=${tempProduct.image
+										} style="width: 100%; height: 200px;">
 								</div>
 								<div class="star_text">
 									<div class="left_part">
 										<ul>
-											<li><a href="#"><img src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
-											<li><a href="#"><img src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
-											<li><a href="#"><img src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
-											<li><a href="#"><img src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
-											<li><a href="#"><img src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
+											<li><a href="#"><img
+													src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
+											<li><a href="#"><img
+													src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
+											<li><a href="#"><img
+													src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
+											<li><a href="#"><img
+													src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
+											<li><a href="#"><img
+													src="${pageContext.request.contextPath}/resources/img/star-icon.png"></a></li>
 										</ul>
 									</div>
 									<div class="right_part">

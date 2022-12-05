@@ -1,111 +1,185 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
- <%@ taglib prefix = "c"
-uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>MyShop</title>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/detail.css">
-     <%@include file="./includes/header.jsp" %>
-  </head>
-  <link rel="stylesheet" href="css/detail.css" />
-  <body>
-    <%@include file="navbar.jsp" %>
-    <c:url var="addCardLink" value="/addCart">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>MyShop</title>
+<link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/detail.css">
+<%@include file="./includes/header.jsp"%>
+<style>
+.text-bold {
+            font-weight: 800;
+        }
+
+        text-color {
+            color: #0093c4;
+        }
+
+        /* Main image - left */
+        .main-img img {
+            width: 100%;
+        }
+
+        /* Preview images */
+        .previews img {
+            width: 100%;
+            height: 140px;
+        }
+
+        .main-description .category {
+            text-transform: uppercase;
+            color: #0093c4;
+        }
+
+        .main-description .product-title {
+            font-size: 2.5rem;
+        }
+
+        .old-price-discount {
+            font-weight: 600;
+        }
+
+        .new-price {
+            font-size: 2rem;
+        }
+
+        .details-title {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #757575;
+        }
+
+        .buttons .block {
+            margin-right: 5px;
+        }
+
+        .quantity input {
+            border-radius: 0;
+            height: 40px;
+
+        }
+
+
+        .custom-btn {
+            text-transform: capitalize;
+            background-color: #0093c4;
+            color: white;
+            width: 150px;
+            height: 40px;
+            border-radius: 0;
+        }
+
+        .custom-btn:hover {
+            background-color: #0093c4 !important;
+            font-size: 18px;
+            color: white !important;
+        }
+
+        .similar-product img {
+            height: 400px;
+        }
+
+        .similar-product {
+            text-align: left;
+        }
+
+        .similar-product .title {
+            margin: 17px 0px 4px 0px;
+        }
+
+        .similar-product .price {
+            font-weight: bold;
+        }
+
+
+        /* Small devices (landscape phones, less than 768px) */
+        @media (max-width: 767.98px) {
+
+            /* Make preview images responsive  */
+            .previews img {
+                width: 100%;
+                height: auto;
+            }
+
+        }
+</style>
+</head>
+<link rel="stylesheet" href="css/detail.css" />
+<body>
+	<%@include file="navbar.jsp"%>
+	<c:url var="addCardLink" value="/addCart">
 		<c:param name="productId" value="${product.product_id}"></c:param>
 	</c:url>
-	
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title">${product.product_name}</h3>
-          <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-6">
-              <div class="white-box text-center">
-                <img
-                  src="${product.image}"
-                  class="img-responsive"
-        
-                />
-              </div>
-            </div>
-            <div class="col-lg-7 col-md-7 col-sm-6">
-              <h4 class="box-title mt-5">Product description</h4>
-              <p>
-                Lorem Ipsum available,but the majority have suffered alteration
-                in some form,by injected humour,or randomised words which don't
-                look even slightly believable.but the majority have suffered
-                alteration in some form,by injected humour
-              </p>
 
-              <h2 class="mt-5">
-                <span
-                  style="
-                    text-decoration: line-through;
-                    color: grey;
-                    font-size: 24px;
-                  "
-                >
-                  ${product.price}₫</span
-                >
-                <br />${product.price}₫
-              </h2>
 
-              <a
-                class="btn btn-primary btn-rounded"
-                href="${addCardLink}"
-                >Add to cart</a
-              >
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <h3 class="box-title mt-5">Thông số kỹ thuật</h3>
-              <div class="table-responsive">
-                <table class="table table-striped table-product">
-                  <tbody>
-                    <tr>
-                      <td width="390">Màn hình:</td>
-                      <td>
-                        IPS LCD full HD+ 2400x1080; 6.43"; 90hz; 1000 nit; Glass
-                        3
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>CPU:</td>
-                      <td>Snapdragon 680; 2.4Ghz; Adreno 610</td>
-                    </tr>
-                    <tr>
-                      <td>RAM:</td>
-                      <td>4GB</td>
-                    </tr>
-                    <tr>
-                      <td>Camera sau:</td>
-                      <td>
-                        50MP + 8MP + 2MP + 2MP; Full HD -60fps; Đèn Flash; HDR,
-                        góc rộng
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Camera trước:</td>
-                      <td>13MP</td>
-                    </tr>
-                    <tr>
-                      <td>Bộ nhớ trong:</td>
-                      <td>64GB</td>
-                    </tr>
-                    <tr>
-                      <td>Pin:</td>
-                      <td>5000mah; Li-ion; Super charge 33W</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <%@include file="footer.jsp" %>
-  </body>
-  <!-- Bootstrap core JS-->
+	<div class="container my-5">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="main-img">
+					<img class="img-fluid" src="${product.image}" alt="ProductS">
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="main-description px-2">
+					<div class="category text-bold">Category: Women</div>
+					<div class="product-title text-bold my-3">
+						${product.product_name}</div>
+
+					<div class="price-area my-4">
+						<p class="old-price mb-1">
+							<del>$100</del>
+							<span class="old-price-discount text-danger">(20% off)</span>
+						</p>
+						<p class="new-price text-bold mb-1">${product.price}₫</p>
+						<p class="text-secondary mb-1">(Additional tax may apply on
+							checkout)</p>
+
+					</div>
+
+
+					<div class="buttons d-flex my-5">
+						<div class="block">
+							<a class="btn shadow btn custom-btn" href="${addCardLink}">Add
+								to cart</a>
+						</div>
+
+						<div class="block quantity">
+							<input type="number" class="form-control" id="cart_quantity"
+								value="1" min="0" max="5" placeholder="Enter email"
+								name="cart_quantity">
+						</div>
+					</div>
+				</div>
+
+				<div class="product-details my-4">
+					<p class="details-title text-color mb-1">Product Details</p>
+					<p class="description">Lorem ipsum dolor sit amet consectetur
+						adipisicing elit. Placeat excepturi odio recusandae aliquid ad
+						impedit autem commodi earum voluptatem laboriosam?</p>
+				</div>
+				<div class="product-details my-4">
+					<p class="details-title text-color mb-2">Material & Care</p>
+					<ul>
+						<li>Cotton</li>
+						<li>Machine-wash</li>
+					</ul>
+				</div>
+				<div class="product-details my-4">
+					<p class="details-title text-color mb-2">Sold by</p>
+					<ul>
+						<li>Cotton</li>
+						<li>Machine-wash</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<%@include file="footer.jsp"%>
+</body>
+<!-- Bootstrap core JS-->
 </html>

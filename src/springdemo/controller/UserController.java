@@ -75,7 +75,7 @@ public class UserController {
 		Users theUser = new Users();
 		theModel.addAttribute("user",theUser);
 		theModel.addAttribute("message",mes);
-		return "register-form";
+		return "redirect:/auth/login";
 		
 	}
 	
