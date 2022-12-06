@@ -1,4 +1,4 @@
-package springdemo.dao;
+package springdemo.implement;
 
 import java.util.List;
 
@@ -11,11 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
+import springdemo.dao.UsersDAO;
 import springdemo.entity.Products;
 import springdemo.entity.Users;
 
 @Repository
-public class UsersDAOImpl implements UsersDAO {
+public class UsersImpl implements UsersDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;

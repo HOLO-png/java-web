@@ -60,7 +60,7 @@
                 </thead>
                 <tbody>
                 <c:forEach var="category" items="${listCategory}">
-                	<c:url var="deleteLink" value="/ad/deleteCategory">
+                	<c:url var="deleteLink" value="/dashboard/deleteCategory">
 						<c:param name="category_id" value="${category.category_id}"></c:param>
 					</c:url>
                 	<tr>

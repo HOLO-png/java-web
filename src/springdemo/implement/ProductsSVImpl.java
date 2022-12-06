@@ -1,4 +1,4 @@
-package springdemo.service;
+package springdemo.implement;
 
 import java.util.List;
 
@@ -10,9 +10,10 @@ import org.springframework.stereotype.Service;
 import springdemo.dao.ProductsDAO;
 import springdemo.entity.Cart;
 import springdemo.entity.Products;
+import springdemo.service.ProductsService;
 
 @Service
-public class ProductsServiceImp implements ProductsService {
+public class ProductsSVImpl implements ProductsService {
 	
 	@Autowired
 	public ProductsDAO productDAO;

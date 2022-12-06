@@ -23,7 +23,7 @@ import springdemo.service.UsersService;
 
 @Controller
 @RequestMapping("/auth")
-public class UserController {
+public class UserCtrl {
 	
 	@Autowired
 	private UsersService usersService;

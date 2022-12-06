@@ -25,7 +25,7 @@ import springdemo.service.ReceiptsService;
 
 @Controller
 @RequestMapping("/user")
-public class OrderController {
+public class OrderCtrl {
 	
 	@Autowired
 	private ProductsService productsService;

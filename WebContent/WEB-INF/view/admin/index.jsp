@@ -69,7 +69,7 @@
 							</thead>
 							<tbody>
 								<c:forEach var="order" items="${All_orders}">
-									<c:url var="viewLinkOrder" value="/ad/viewOrder">
+									<c:url var="viewLinkOrder" value="/dashboard/viewOrder">
 										<c:param name="receipt_id" value="${order.receipt_id}"></c:param>
 									</c:url>
 									<tr>

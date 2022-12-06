@@ -29,8 +29,8 @@ import springdemo.service.ReceiptsService;
 import springdemo.service.UsersService;
 
 @Controller
-@RequestMapping("/ad")
-public class AdminControllerBusiness {
+@RequestMapping("/dashboard")
+public class CRM {
 	
 	@Autowired
 	private ProductsService productsService;
@@ -161,7 +161,7 @@ public class AdminControllerBusiness {
 				
 		categoryService.createReceipts(categories);
 		
-		return "redirect:/ad/showCategoryCreatePage";
+		return "redirect:/dashboard/showCategoryCreatePage";
 	}
 	
 	@GetMapping("/showProductCreatePage")
@@ -215,7 +215,7 @@ public class AdminControllerBusiness {
 		
 		productsService.createProduct(newProduct);
 
-		return "redirect:/ad/showProductCreatePage";
+		return "redirect:/dashboard/showProductCreatePage";
 		
 	}
 	
@@ -270,7 +270,7 @@ public class AdminControllerBusiness {
 		
 		productsService.createProduct(newProduct);
 
-		return "redirect:/ad/showProductCreatePage";
+		return "redirect:/dashboard/showProducts";
 	}
 	
 	@GetMapping("/deleteCategory")
@@ -285,7 +285,7 @@ public class AdminControllerBusiness {
 		}
 		
 		categoryService.delete(category_id);
-		return "redirect:/ad/showCategoryCreatePage";
+		return "redirect:/dashboard/showCategoryCreatePage";
 	}
 	
 	@GetMapping("/deleteProduct")
@@ -300,7 +300,7 @@ public class AdminControllerBusiness {
 		}
 		
 		productsService.delete(product_id);
-		return "redirect:/ad/showProducts";
+		return "redirect:/dashboard/showProducts";
 	}
 	
 	@GetMapping("/viewOrder")

@@ -1,4 +1,4 @@
-package springdemo.dao;
+package springdemo.implement;
 
 import java.util.List;
 
@@ -8,20 +8,21 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import springdemo.dao.ProductsDAO;
 import springdemo.entity.Cart;
 import springdemo.entity.Products;
 
 @Repository
-public class ProductsDAOImpl implements ProductsDAO {
-	
+public class ProductsImpl implements ProductsDAO {
+
 	// need to inject the session factory
-		@Autowired
-		private SessionFactory sessionFactory;
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	@Override
 	public List<Products> getProducts() {
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query<Products> theQuery= currentSession.createQuery("from Products", Products.class);
+		Query<Products> theQuery = currentSession.createQuery("from Products", Products.class);
 		List<Products> products = theQuery.getResultList();
 		return products;
 	}
@@ -30,7 +31,8 @@ public class ProductsDAOImpl implements ProductsDAO {
 	public List<Products> getProductBuyCategory(int category_id) {
 
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query<Products> theQuery= currentSession.createQuery("from Products where category_id=:category_id", Products.class);
+		Query<Products> theQuery = currentSession.createQuery("from Products where category_id=:category_id",
+				Products.class);
 		theQuery.setParameter("category_id", category_id);
 		List<Products> products = theQuery.getResultList();
 		return products;
@@ -47,11 +49,11 @@ public class ProductsDAOImpl implements ProductsDAO {
 	@Override
 	public void createProduct(Products product) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		//save product
+		// save product
 		currentSession.saveOrUpdate(product);
-		
+
 	}
-	
+
 	@Override
 	public void delete(int product_id) {
 		// TODO Auto-generated method stub
@@ -60,9 +62,5 @@ public class ProductsDAOImpl implements ProductsDAO {
 		theQuery.setParameter("product_id", product_id);
 		theQuery.executeUpdate();
 	}
-	
-	
-	
-	
-}
 
+}

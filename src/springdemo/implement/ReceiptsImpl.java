@@ -1,4 +1,4 @@
-package springdemo.dao;
+package springdemo.implement;
 
 import java.util.List;
 
@@ -8,12 +8,13 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import springdemo.dao.ReceiptsDAO;
 import springdemo.entity.Products;
 import springdemo.entity.Receipts;
 import springdemo.entity.Users;
 
 @Repository
-public class ReceiptsDAOImpl implements ReceiptsDAO {
+public class ReceiptsImpl implements ReceiptsDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;

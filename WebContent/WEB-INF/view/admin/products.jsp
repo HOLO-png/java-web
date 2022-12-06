@@ -21,7 +21,7 @@
 				<h1>Product</h1>
 			</div>
 			<div class="page-content">
-				<a href="<%=request.getContextPath()%>/ad/showProductCreatePage">
+				<a href="<%=request.getContextPath()%>/dashboard/showProductCreatePage">
 					<button class="add-btn" style="margin-bottom: 15px">Add
 						new product</button>
 				</a>
@@ -39,11 +39,11 @@
 							</thead>
 							<tbody>
 								<c:forEach var="product" items="${listProduct}">
-									<c:url var="updateLink" value="/ad/updateProduct">
+									<c:url var="updateLink" value="/dashboard/updateProduct">
 										<c:param name="product_id" value="${product.product_id}"></c:param>
 									</c:url>
 
-									<c:url var="deleteLink" value="/ad/deleteProduct">
+									<c:url var="deleteLink" value="/dashboard/deleteProduct">
 										<c:param name="product_id" value="${product.product_id}"></c:param>
 									</c:url>
 

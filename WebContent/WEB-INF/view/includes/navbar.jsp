@@ -28,7 +28,7 @@
 							<c:choose>
 								<c:when test="${auth.isUser_role()}">
 									<a class="nav-item nav-link last text-light"
-										href="<%=request.getContextPath()%>/ad/showAdmin">Admin</a>
+										href="<%=request.getContextPath()%>/dashboard/showAdmin">Admin</a>
 								</c:when>
 							</c:choose>
 							<a class="nav-item nav-link last text-light" href="#"><img

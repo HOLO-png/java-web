@@ -1,4 +1,4 @@
-package springdemo.service;
+package springdemo.implement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,10 @@ import springdemo.dao.ReceiptsDAO;
 import springdemo.entity.Cart;
 import springdemo.entity.Order;
 import springdemo.entity.Receipts;
+import springdemo.service.ReceiptsService;
 
 @Service
-public class ReceiptsServiceImpl implements ReceiptsService {
+public class ReceiptsSVImpl implements ReceiptsService {
 	
 	@Autowired
 	public ReceiptsDAO receiptsDAO;

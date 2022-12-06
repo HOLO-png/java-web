@@ -26,7 +26,7 @@ import springdemo.service.ReceiptsService;
 
 @Controller
 @RequestMapping("/")
-public class ProductsControllerBussiness {
+public class ProductCtrl {
 	
 	@Autowired
 	private ProductsService productsService;
@@ -66,7 +66,7 @@ public class ProductsControllerBussiness {
 		// add the customers to the model
 		theModel.addAttribute("products", theProducts);
 		theModel.addAttribute("listCategories", listCategories);
-		return "list-products";
+		return "home";
 	}
 	
 	@GetMapping("/detail")

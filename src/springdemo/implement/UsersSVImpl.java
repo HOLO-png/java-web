@@ -1,4 +1,4 @@
-package springdemo.service;
+package springdemo.implement;
 
 import java.util.List;
 
@@ -9,9 +9,10 @@ import org.springframework.stereotype.Service;
 
 import springdemo.dao.UsersDAO;
 import springdemo.entity.Users;
+import springdemo.service.UsersService;
 
 @Service
-public class UsersServiceImp implements UsersService {
+public class UsersSVImpl implements UsersService {
 	
 	@Autowired
 	public UsersDAO usersDAO;

@@ -1,4 +1,4 @@
-package springdemo.service;
+package springdemo.implement;
 
 import java.util.List;
 
@@ -12,9 +12,10 @@ import springdemo.dao.ProductsDAO;
 import springdemo.entity.Cart;
 import springdemo.entity.Categories;
 import springdemo.entity.Products;
+import springdemo.service.CategoryService;
 
 @Service
-public class CategoryServiceImp implements CategoryService {
+public class CategorySVImpl implements CategoryService {
 	
 	@Autowired
 	public CategoryDAO categoryDAO;

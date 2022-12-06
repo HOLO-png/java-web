@@ -1,4 +1,4 @@
-package springdemo.dao;
+package springdemo.implement;
 
 import java.util.List;
 
@@ -8,13 +8,14 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import springdemo.dao.CategoryDAO;
 import springdemo.entity.Categories;
 import springdemo.entity.Products;
 import springdemo.entity.Receipts;
 import springdemo.entity.Users;
 
 @Repository
-public class CategoryDAOImpl implements CategoryDAO {
+public class CategoryImpl implements CategoryDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
